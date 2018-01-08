@@ -2,7 +2,7 @@
 by EthanMC
   
   <p align="center">
-### [Download](https://github.com/emcpwns/cannabiskingdom/raw/master/Cannabis%20Kingdom.rar)
+    <a href="https://github.com/emcpwns/cannabiskingdom/raw/master/Cannabis%20Kingdom.rar">Download</a>
   </p>
   
 ## Requirements
