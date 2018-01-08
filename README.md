@@ -7,7 +7,7 @@ by EthanMC
 3. *Resource Manager 3.1 OR *Resource Manager 4.0 Test Version by DarthPresidente  
 4. Place contents of this .zip file into your Tropico 5 folder to maintain file structure. (The README.txt file you're currently reading does not need to be moved)  
 5. A fresh game save  
-/* = Highly recommended, but not required for fuctionality
+* = Highly recommended, but not required for fuctionality
 
 ## Change Log
 	Beta 2.0.1		Adjusted default prices for cannabis to reflect actual value (taking into account modern medicianl value and hemp value in Colonial & World Wars eras).
