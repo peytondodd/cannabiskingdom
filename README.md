@@ -46,4 +46,4 @@ by EthanMC
 	- Potential upgraded to plantation that procudes femanized seeds as a by-product
 
 
-#### (C) 2018 Ethan Cochran
+#### &copy; 2018 Ethan Cochran
