@@ -1,5 +1,5 @@
 # Cannabis Kingdom v1.2.1 (mod for Tropico 5)
-###by EthanMC
+### by EthanMC
   
   <p align="center">
     <a href="https://github.com/emcpwns/cannabiskingdom/raw/master/Cannabis%20Kingdom.rar">Download</a>
