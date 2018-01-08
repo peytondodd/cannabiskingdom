@@ -5,7 +5,7 @@ by EthanMC
 1. [Mod Loader 2.4](https://tropicomodding.org/mod-loader-2-4-required-file-t28.html) by DarthPresidente  
 2. [DrugTrade 2.00](https://tropicomodding.org/drug-trade-updated-jan-10-2015-t20.html) by DarthPresidente  
 3. *[Resource Manager 3.1](http://tropicomodding.org/resource-manager-2-0-major-update-t52.html) OR *[Resource Manager 4.0 Test Version](https://tropicomodding.org/resource-manager-4-0-test-version-1-now-available-t354.html) by DarthPresidente  
-4. Place contents of this .zip file into your Tropico 5 folder to maintain file structure. (The README.txt file you're currently reading does not need to be moved)  
+4. Place contents of this .zip file into your Tropico 5 folder to maintain file structure. 
 5. A fresh game save  
 <code>&ast;</code> = Highly recommended, but not required for fuctionality
 
