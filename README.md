@@ -1,6 +1,8 @@
 # Cannabis Kingdom v1.2.1 (mod for Tropico 5)
 by EthanMC
-
+  
+### [Download](https://github.com/emcpwns/cannabiskingdom/raw/master/Cannabis%20Kingdom.rar)
+  
 ## Requirements
 1. [Mod Loader 2.4](https://tropicomodding.org/mod-loader-2-4-required-file-t28.html) by DarthPresidente  
 2. [DrugTrade 2.00](https://tropicomodding.org/drug-trade-updated-jan-10-2015-t20.html) by DarthPresidente  
