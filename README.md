@@ -1,4 +1,4 @@
-#Cannabis Kingdom v1.2.1
+#Cannabis Kingdom v1.2.1 
 by EthanMC
 
 ##Requirements
@@ -40,3 +40,6 @@ by EthanMC
 	- Add dispensary, provides healthcare, consumes cannabis (if possible?)
 	- Add cannabutter to creamery
 	- Potential upgraded to plantation that procudes femanized seeds as a by-product
+
+
+####(C) 2018 Ethan Cochran
