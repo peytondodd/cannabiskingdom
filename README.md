@@ -1,12 +1,12 @@
-# Cannabis Kingdom v1.2.1 
+# Cannabis Kingdom v1.2.1 (mod for Tropico 5)
 by EthanMC
 
 ## Requirements
-1. Mod Loader 2.4 by DarthPresidente
-2. DrugTrade 2.00 by DarthPresidente
-3. *Resource Manager 3.1 OR *Resource Manager 4.0 Test Version by DarthPresidente
-4. Place contents of this .zip file into your Tropico 5 folder to maintain file structure. (The README.txt file you're currently reading does not need to be moved)
-5. A fresh game save
+1. Mod Loader 2.4 by DarthPresidente  
+2. DrugTrade 2.00 by DarthPresidente  
+3. *Resource Manager 3.1 OR *Resource Manager 4.0 Test Version by DarthPresidente  
+4. Place contents of this .zip file into your Tropico 5 folder to maintain file structure. (The README.txt file you're currently reading does not need to be moved)  
+5. A fresh game save  
 /* = Highly recommended, but not required for fuctionality
 
 ## Change Log
