@@ -67,12 +67,13 @@ Originally was meant to intake hemp and corn, but the base game does not support
 
 **Ver. 1.2.1** - Added 8 new trade routes for hemp.
 
+**Ver. 1.3.0** - Added new resource: Cannabutter. Can be made with a Creamery (Big Cheese DLC required). Also includes trade routes for cannabutter.
+
 ## Bugs
 - (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
 
 ## Planned Features
 - Add dispensary, provides healthcare, consumes cannabis (if possible?)
-- Add cannabutter to creamery
 - Potential upgraded to plantation that procudes femanized seeds as a by-product
 - Custom textures for Biofuel Plant and Hemp Factory. (will likely still use the meshes)
 

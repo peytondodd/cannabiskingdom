@@ -12,7 +12,7 @@ ________________________________________________________________________________
 |     \--.| \    |\\.//|    / |.--/     | ██║     ██╔══██║██║╚██╗██║██║╚██╗██║██╔══██║██╔══██╗██║╚════██║    ██╔═██╗ ██║██║╚██╗██║██║   ██║██║  ██║██║   ██║██║╚██╔╝██║  |
 |      \---.|\    |\./|    /|.---/      | ╚██████╗██║  ██║██║ ╚████║██║ ╚████║██║  ██║██████╔╝██║███████║    ██║  ██╗██║██║ ╚████║╚██████╔╝██████╔╝╚██████╔╝██║ ╚═╝ ██║  |
 |         \--.|\  |\./|  /|.--/         |  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═════╝ ╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝  |
-|            \ .\  |.|  /. /            |                                                                                                                        v1.2.1  |
+|            \ .\  |.|  /. /            |                                                                                                                        v1.3.0  |
 |  _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _  |                                                          by EthanMC                                                            |
 |    - -/_/_/- ^_^/| |\^_^ -\_\_\- -    |                                                                                                                                |
 |              /_ / | \ _\              |                                                                                                                                |
@@ -45,6 +45,7 @@ ________________________________________________________________________________
 	Ver. 1.2.0		Added biofuel plant, intakes hemp and ouputs power. Comparable to standard Power Plant.
 					Originally was meant to intake hemp and corn, but the base game does not support power production which depends on two resources. Could be possible with additional modding in the future however.
 	Ver. 1.2.1		Added 8 new trade routes for hemp.
+	Ver. 1.3.0		Added new resource: Cannabutter. Can be made with a Creamery (Big Cheese DLC required). Also includes trade routes for cannabutter.
 
 ╔╗ ┬ ┬┌─┐┌─┐
 ╠╩╗│ ││ ┬└─┐
@@ -57,8 +58,8 @@ ________________________________________________________________________________
 ╩  ┴─┘┴ ┴┘└┘┘└┘└─┘─┴┘  ╚  └─┘┴ ┴ ┴ └─┘┴└─└─┘└─┘
 ########################################################################################################
 	- Add dispensary, provides healthcare, consumes cannabis (if possible?)
-	- Add cannabutter to creamery
 	- Potential upgraded to plantation that procudes femanized seeds as a by-product
+	- Custom textures for Biofuel Plant and Hemp Factory. (will likely still use the meshes)
 
 --]]
 
@@ -66,7 +67,7 @@ local CannabisKingdom = {
 	Name = "Cannabis_Kingdom",
 	NameText = "Cannabis Kingdom",
 	Author = "EthanMC",
-	Version = "1.2.1",
+	Version = "1.3.0",
 	Config = {
 		-- Hemp Modifiers ###########################################################################
 		Hemp_Price_Era_1 = {Type = "number",Default = 1600,RangeMin = 1,RangeMax = 100000},
@@ -122,6 +123,19 @@ local CannabisKingdom = {
 		JointsStandingImpact = {Type = "number",Default = 1,RangeMin = -100,RangeMax = 100},
 		JointsEffectivenessImpact = {Type = "number",Default = 5,RangeMin = -100,RangeMax = 100},
 		JointsWorkerImpact = {Type = "number",Default = 1,RangeMin = -100,RangeMax = 100},
+		-- Cannabutter Modifiers ############################################################################
+		Cannabutter_Price_Era_1 = {Type = "number",Default = 1900,RangeMin = 1,RangeMax = 100000},
+		Cannabutter_Price_Era_2 = {Type = "number",Default = 2300,RangeMin = 1,RangeMax = 100000},
+		Cannabutter_Price_Era_3 = {Type = "number",Default = 3100,RangeMin = 1,RangeMax = 100000},
+		Cannabutter_Price_Era_4 = {Type = "number",Default = 4300,RangeMin = 1,RangeMax = 100000},
+		Cannabutter_Price_Era_5 = {Type = "number",Default = 4500,RangeMin = 1,RangeMax = 100000},
+		CannabutterInputQty1 = {Type = "number",Default = 150,RangeMin = 1,RangeMax = 100000},
+		CannabutterInputQty2 = {Type = "number",Default = 150,RangeMin = 1,RangeMax = 100000},
+		CannabutterOutputQty = {Type = "number",Default = 300,RangeMin = 1,RangeMax = 100000},
+		CannabutterBudgetImpact = {Type = "number",Default = 75,RangeMin = 0,RangeMax = 100000},
+		CannabutterStandingImpact = {Type = "number",Default = 5,RangeMin = -100,RangeMax = 100},
+		CannabutterEffectivenessImpact = {Type = "number",Default = -20,RangeMin = -100,RangeMax = 100},
+		CannabutterWorkerImpact = {Type = "number",Default = 2,RangeMin = -100,RangeMax = 100},
 		-- Hippy Commune Modifiers ###################################################################
 		HippyWorkerImpact = {Type = "number",Default = 8,RangeMin = -100,RangeMax = 100},
 		HippyBudgetImpact = {Type = "number",Default = 80,RangeMin = 0,RangeMax = 100000},
@@ -145,7 +159,14 @@ OnMsg.ClassesPreprocess = function()
 		PriceByAge = GetDrugPrices420("Hemp"),
 		IsIndustry = true,
 		IsProcessed = true
-	})	
+	})
+	CreateNewResource({
+		Id = "Cannabutter",
+		Name = ModT("Resource_Cannabutter","Cannabutter"),
+		PriceByAge = GetDrugPrices420("Cannabutter"),
+		IsIndustry = true,
+		IsProcessed = true
+	})
 	CreateNewResource({
 		Id = "Dabs",
 		Name = ModT("Resource_Dabs","Dabs"),
@@ -225,6 +246,38 @@ local CannabisUpgrades = {
 						OutputResource = "Joints",
 						BaseOutputAmount = mcfg.JointsOutputQty,
 						OutputCapacity = 4000
+					},
+				}
+			}
+		}
+	},
+	{
+		Buildings = {"Creamery"},
+		Upgrades = {
+			MakeCannabutter = {
+				Name = ModT("Upgrade_MakeCannabutter","Infuse With Cannabis"),
+				Rollover = ModT("Rollover_MakeCannabutter","Infuse your butter with Cannabis.\nBudget: +<arg1>\nWorkers: +<arg2>\nEffectiveness: <arg3>\nEnvironmentalists <arg4>",mcfg.CannabutterBudgetImpact,mcfg.CannabutterWorkerImpact,mcfg.CannabutterEffectivenessImpact,mcfg.CannabutterStandingImpact),
+				DisabledText = ModT("Disabled_MakeCannabutter","Turn medicinal chocolate production off."),
+				Toggle = true,
+				Standings = {{Type = "environmentalists", Amount = mcfg.CannabutterStandingImpact}},
+				ApplyModifiers = {
+					{Category = "Workplace",PropName = "MaxWorkers",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterWorkerImpact},
+					{Category = "General",PropName = "InherentEffectiveness",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterEffectivenessImpact},
+					{Category = "Building Properties",PropName = "BudgetMin",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterBudgetImpact},
+					{Category = "Building Properties",PropName = "BudgetMax",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterBudgetImpact}
+				},
+				RawAdd = {
+					{	
+						Component = "Production",
+						InputResource1 = "Dabs", 
+						BaseInputAmount1 = mcfg.CannabutterInputQty1,
+						InputCapacity1 = 600,
+						InputResource1 = "Milk", 
+						BaseInputAmount1 = mcfg.CannabutterInputQty2,
+						InputCapacity1 = 600,
+						OutputResource = "Cannabutter",
+						BaseOutputAmount = mcfg.CannabutterOutputQty,
+						OutputCapacity = 1200
 					},
 				}
 			}
@@ -447,6 +500,10 @@ OnMsg.DataLoaded = function()
 	CreateDrugTrade420("Hemp","USA",3,3,125,"USA",10,"USSR",-10,"",0)
 	CreateDrugTrade420("Hemp","USSR",3,3,125,"USA",-10,"USSR",10,"",0)
 	CreateDrugTrade420("Hemp","Smugglers",3,3,125,"USA",-5,"USSR",-5,"",0)
+	CreateDrugTrade420("Cannabutter","Smugglers",1,1,125,"",0,"",0,"",0)
+	CreateDrugTrade420("Cannabutter","Smugglers",2,2,125,"",0,"",0,"",0)
+	CreateDrugTrade420("Cannabutter","Smugglers",3,3,125,"",0,"",0,"",0)
+	CreateDrugTrade420("Cannabutter","Smugglers",4,4,125,"",0,"",0,"",0)
 	CreateDrugTrade420("Dabs","Smugglers",4,4,125,"USA",1,"Middle East",-2,"China",-2)
 	CreateDrugTrade420("Blunts","Smugglers",1,1,125,"",0,"",0,"",0)
 	CreateDrugTrade420("Blunts","Smugglers",2,2,125,"",0,"",0,"",0)
