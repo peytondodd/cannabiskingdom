@@ -1,4 +1,4 @@
-﻿```
+
 __________________________________________________________________________________________________________________________________________________________________________
 |                                       |                                                                                                                                |
 |                   |                   |                                                                                                                                |
@@ -70,4 +70,3 @@ ________________________________________________________________________________
 	- Add dispensary, provides healthcare, consumes cannabis (if possible?)
 	- Add cannabutter to creamery
 	- Potential upgraded to plantation that procudes femanized seeds as a by-product
-```
