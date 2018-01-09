@@ -1,6 +1,3 @@
-# Cannabis Kingdom v1.2.1 (mod for Tropico 5)
-### by EthanMC
-  
 ```
                     |
                    |.|
@@ -17,7 +14,7 @@
    _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _
      - -/_/_/- ^_^/| |\^_^ -\_\_\- -
                /_ / | \ _\
-                    |
+                    |                                                                                  by EthanMC
 ```
   
 ## Requirements
