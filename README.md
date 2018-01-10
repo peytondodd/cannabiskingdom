@@ -28,8 +28,8 @@
 * New Chocolate Factory upgrades: Edible Candies & Edible Chocolates
 
 ## Downloads
-[Full Releases](https://github.com/emcpwns/cannabiskingdom/releases) - (List of Stable Builds)
-[Live Repo](https://github.com/emcpwns/cannabiskingdom/archive/master.zip) - (.ZIP file of the latest available build, may contain untested features)
+[Full Releases](https://github.com/emcpwns/cannabiskingdom/releases) - (List of Stable Builds)  
+[Live Repo](https://github.com/emcpwns/cannabiskingdom/archive/master.zip) - (.ZIP file of the latest available build, may contain untested features)  
 
 ## Requirements
 1. [Mod Loader 2.4](https://tropicomodding.org/mod-loader-2-4-required-file-t28.html) by DarthPresidente  
