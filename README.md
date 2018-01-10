@@ -16,7 +16,21 @@
                /_ / | \ _\
                     |                                                                                  by EthanMC
 ```
-  
+
+## Features:
+* Adds 6 new resources. Hemp, Cannabutter, Joints, Blunts, Dabs, & Edibles.
+* New production building: The Hemp Factory.
+* New power plant: Biofuel Plant.
+* 20+ New trades.
+* New Creamery upgrade: Infuse with Cannabis.
+* New Cigar Factory upgrades: Roll Joints & Roll Blunts.
+* New Pharmaceutical Factory upgrades: Make Dabs - BHO, & Make Dabs - Rosin Tech.
+* New Chocolate Factory upgrades: Edible Candies & Edible Chocolates
+
+## Downloads
+[Full Releases](https://github.com/emcpwns/cannabiskingdom/releases) - (List of Stable Builds)
+[Live Repo](https://github.com/emcpwns/cannabiskingdom/archive/master.zip) - (.ZIP file of the latest available build, may contain untested features)
+
 ## Requirements
 1. [Mod Loader 2.4](https://tropicomodding.org/mod-loader-2-4-required-file-t28.html) by DarthPresidente  
 2. [DrugTrade 2.00](https://tropicomodding.org/drug-trade-updated-jan-10-2015-t20.html) by DarthPresidente  
