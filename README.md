@@ -106,7 +106,7 @@ Originally was meant to intake hemp and corn, but the base game does not support
 
 #### &copy; 2018 Ethan Cochran
 
-[scrShot1]: https://raw.github.com/emcpwns/cannabiskingdom/master/Screenshots/scrShot1.png
-[scrShot2]: https://raw.github.com/emcpwns/cannabiskingdom/master/Screenshots/scrShot2.png
-[scrShot3]: https://raw.github.com/emcpwns/cannabiskingdom/master/Screenshots/scrShot3.png
-[scrShot4]: https://raw.github.com/emcpwns/cannabiskingdom/master/Screenshots/scrShot4.png
+[scrShot1]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot1.png
+[scrShot2]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot2.png
+[scrShot3]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot3.png
+[scrShot4]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot4.png
