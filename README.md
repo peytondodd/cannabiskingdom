@@ -27,7 +27,7 @@
 * New Pharmaceutical Factory upgrades: Make Dabs - BHO, & Make Dabs - Rosin Tech.
 * New Chocolate Factory upgrades: Edible Candies & Edible Chocolates
 
-[Resources][scrShot1]
+![Resources][scrShot1]
 
 ## Downloads
 [Full Releases](https://github.com/emcpwns/cannabiskingdom/releases) - (List of Stable Builds)  
