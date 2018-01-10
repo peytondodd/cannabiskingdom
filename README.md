@@ -87,9 +87,11 @@ Originally was meant to intake hemp and corn, but the base game does not support
 - (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
 
 ## Planned Features
+- Add some type of building for entertainment/tourism that consumes cannabis
 - Add dispensary, provides healthcare, consumes cannabis (if possible?)
 - Potential upgraded to plantation that procudes femanized seeds as a by-product
 - Custom textures for Biofuel Plant and Hemp Factory. (will likely still use the meshes)
+- Write Cannabis Kingdom Mission
 
 
 #### &copy; 2018 Ethan Cochran
