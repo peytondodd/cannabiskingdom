@@ -28,7 +28,7 @@
 * New Chocolate Factory upgrades: Edible Candies & Edible Chocolates
 
 ## Website
-Check out screenshots, videos, FAQs and more on the [Cannabis Kingdom webpage](emcpwns.github.io/CKS/).
+Check out screenshots, videos, FAQs and more on the [Cannabis Kingdom webpage](https://emcpwns.github.io/CKS/).
 
 ## Downloads
 [Full Releases](https://github.com/emcpwns/cannabiskingdom/releases) - (List of Stable Builds)  
