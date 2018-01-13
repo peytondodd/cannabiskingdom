@@ -8,7 +8,7 @@
    \^.\          |\\.//|          /.^/    |    |__| |\ | |\ | |__| |__] | [__     |_/  | |\ | | __ |  \ |  | |\/| 
     \--.|\       |\\.//|       /|.--/     |___ |  | | \| | \| |  | |__] | ___]    | \_ | | \| |__] |__/ |__| |  | 
       \--.| \    |\\.//|    / |.--/
-       \---.|\    |\./|    /|.---/                                                                         v1.3.0
+       \---.|\    |\./|    /|.---/                                                                         v1.3.1
           \--.|\  |\./|  /|.--/
              \ .\  |.|  /. /
    _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _
@@ -27,15 +27,8 @@
 * New Pharmaceutical Factory upgrades: Make Dabs - BHO, & Make Dabs - Rosin Tech.
 * New Chocolate Factory upgrades: Edible Candies & Edible Chocolates
 
-## Screenshots  
-#### Resources  
-![Resources][scrShot1]  
-#### Biofuel Plant  
-![Biofuel Plant][scrShot2]  
-#### Hemp Factory  
-![Hemp Factory][scrShot3]  
-#### Cigar Factory Upgrades  
-![Cigar Factory Upgrades][scrShot4]  
+## Website
+Check out screenshots, videos, FAQs and more on the [Cannabis Kingdom webpage](emcpwns.github.io/CKS/).
 
 ## Downloads
 [Full Releases](https://github.com/emcpwns/cannabiskingdom/releases) - (List of Stable Builds)  
@@ -93,6 +86,8 @@ Originally was meant to intake hemp and corn, but the base game does not support
 
 **Ver. 1.3.0** - Added new resource: Cannabutter. Can be made with a Creamery (Big Cheese DLC required). Also includes trade routes for cannabutter.
 
+**Ver. 1.3.1** - Fixed bugs with cannabutter production
+
 ## Bugs
 - (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
 
@@ -105,8 +100,3 @@ Originally was meant to intake hemp and corn, but the base game does not support
 
 
 #### &copy; 2018 Ethan Cochran
-
-[scrShot1]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot1.png
-[scrShot2]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot2.png
-[scrShot3]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot3.png
-[scrShot4]: https://raw.github.com/emcpwns/cannabiskingdom/master/Docs/Screenshots/scrShot4.png

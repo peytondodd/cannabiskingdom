@@ -12,7 +12,7 @@ ________________________________________________________________________________
 |     \--.| \    |\\.//|    / |.--/     | ██║     ██╔══██║██║╚██╗██║██║╚██╗██║██╔══██║██╔══██╗██║╚════██║    ██╔═██╗ ██║██║╚██╗██║██║   ██║██║  ██║██║   ██║██║╚██╔╝██║  |
 |      \---.|\    |\./|    /|.---/      | ╚██████╗██║  ██║██║ ╚████║██║ ╚████║██║  ██║██████╔╝██║███████║    ██║  ██╗██║██║ ╚████║╚██████╔╝██████╔╝╚██████╔╝██║ ╚═╝ ██║  |
 |         \--.|\  |\./|  /|.--/         |  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═════╝ ╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝  |
-|            \ .\  |.|  /. /            |                                                                                                                        v1.3.0  |
+|            \ .\  |.|  /. /            |                                                                                                                        v1.3.1  |
 |  _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _  |                                                          by EthanMC                                                            |
 |    - -/_/_/- ^_^/| |\^_^ -\_\_\- -    |                                                                                                                                |
 |              /_ / | \ _\              |                                                                                                                                |
@@ -46,6 +46,7 @@ ________________________________________________________________________________
 					Originally was meant to intake hemp and corn, but the base game does not support power production which depends on two resources. Could be possible with additional modding in the future however.
 	Ver. 1.2.1		Added 8 new trade routes for hemp.
 	Ver. 1.3.0		Added new resource: Cannabutter. Can be made with a Creamery (Big Cheese DLC required). Also includes trade routes for cannabutter.
+	Ver. 1.3.1		Fixed bugs with cannabutter production
 
 ╔╗ ┬ ┬┌─┐┌─┐
 ╠╩╗│ ││ ┬└─┐
@@ -69,7 +70,7 @@ local CannabisKingdom = {
 	Name = "Cannabis_Kingdom",
 	NameText = "Cannabis Kingdom",
 	Author = "EthanMC",
-	Version = "1.3.0",
+	Version = "1.3.1",
 	Config = {
 		-- Hemp Modifiers ###########################################################################
 		Hemp_Price_Era_1 = {Type = "number",Default = 1600,RangeMin = 1,RangeMax = 100000},
@@ -257,26 +258,26 @@ local CannabisUpgrades = {
 		Buildings = {"Creamery"},
 		Upgrades = {
 			MakeCannabutter = {
-				Name = ModT("Upgrade_MakeCannabutter","Infuse With Cannabis"),
-				Rollover = ModT("Rollover_MakeCannabutter","Infuse your butter with Cannabis.\nBudget: +<arg1>\nWorkers: +<arg2>\nEffectiveness: <arg3>\nEnvironmentalists <arg4>",mcfg.CannabutterBudgetImpact,mcfg.CannabutterWorkerImpact,mcfg.CannabutterEffectivenessImpact,mcfg.CannabutterStandingImpact),
-				DisabledText = ModT("Disabled_MakeCannabutter","Turn medicinal chocolate production off."),
+				Name = ModT("Upgrade_MakeCannabutter","Churn Cannabutter"),
+				Rollover = ModT("Rollover_MakeCannabutter","Churn butter infused with Cannabis.\nBudget: +<arg1>\nWorkers: +<arg2>\nEffectiveness: <arg3>\nEnvironmentalists <arg4>",mcfg.CannabutterBudgetImpact,mcfg.CannabutterWorkerImpact,mcfg.CannabutterEffectivenessImpact,mcfg.CannabutterStandingImpact),
+				DisabledText = ModT("Disabled_MakeCannabutter","Turn Cannabutter production off."),
 				Toggle = true,
 				Standings = {{Type = "environmentalists", Amount = mcfg.CannabutterStandingImpact}},
 				ApplyModifiers = {
-					{Category = "Workplace",PropName = "MaxWorkers",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterWorkerImpact},
-					{Category = "General",PropName = "InherentEffectiveness",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterEffectivenessImpact},
-					{Category = "Building Properties",PropName = "BudgetMin",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterBudgetImpact},
-					{Category = "Building Properties",PropName = "BudgetMax",Description = ModT("Upgrade_MakeCannabutter","Edible Chocolates"),Value = mcfg.CannabutterBudgetImpact}
+					{Category = "Workplace",PropName = "MaxWorkers",Description = ModT("Upgrade_MakeCannabutter","Churning Cannabutter"),Value = mcfg.CannabutterWorkerImpact},
+					{Category = "General",PropName = "InherentEffectiveness",Description = ModT("Upgrade_MakeCannabutter","Churning Cannabutter"),Value = mcfg.CannabutterEffectivenessImpact},
+					{Category = "Building Properties",PropName = "BudgetMin",Description = ModT("Upgrade_MakeCannabutter","Churning Cannabutter"),Value = mcfg.CannabutterBudgetImpact},
+					{Category = "Building Properties",PropName = "BudgetMax",Description = ModT("Upgrade_MakeCannabutter","Churning Cannabutter"),Value = mcfg.CannabutterBudgetImpact}
 				},
 				RawAdd = {
 					{	
 						Component = "Production",
-						InputResource1 = "Dabs", 
+						InputResource1 = "Cannabis", 
 						BaseInputAmount1 = mcfg.CannabutterInputQty1,
 						InputCapacity1 = 600,
-						InputResource1 = "Milk", 
-						BaseInputAmount1 = mcfg.CannabutterInputQty2,
-						InputCapacity1 = 600,
+						InputResource2 = "Milk", 
+						BaseInputAmount2 = mcfg.CannabutterInputQty2,
+						InputCapacity2 = 600,
 						OutputResource = "Cannabutter",
 						BaseOutputAmount = mcfg.CannabutterOutputQty,
 						OutputCapacity = 1200
