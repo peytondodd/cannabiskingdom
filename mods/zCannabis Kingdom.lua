@@ -693,12 +693,14 @@ function OnMsg.DataLoaded()
   }),
   PlaceObj("ApplyModifier", {
     "EnabledBy", "Advanced Processing",
+    "Category", "Workplace",
     "PropName", "InherentEffectiveness",
     "Description", T({"Advanced Processing Upgrade"}),
     "Value", 30
   }),
   PlaceObj("ApplyModifier", {
     "EnabledBy", "Advanced Processing",
+    "Category", "Workplace",
     "PropName", "InherentEducationRequired",
     "Description", T({"Advanced Processing Upgrade"}),
     "Value", 3
