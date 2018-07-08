@@ -12,7 +12,7 @@ ________________________________________________________________________________
 |     \--.| \    |\\.//|    / |.--/     | ██║     ██╔══██║██║╚██╗██║██║╚██╗██║██╔══██║██╔══██╗██║╚════██║    ██╔═██╗ ██║██║╚██╗██║██║   ██║██║  ██║██║   ██║██║╚██╔╝██║  |
 |      \---.|\    |\./|    /|.---/      | ╚██████╗██║  ██║██║ ╚████║██║ ╚████║██║  ██║██████╔╝██║███████║    ██║  ██╗██║██║ ╚████║╚██████╔╝██████╔╝╚██████╔╝██║ ╚═╝ ██║  |
 |         \--.|\  |\./|  /|.--/         |  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═════╝ ╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝  |
-|            \ .\  |.|  /. /            |                                                                                                                        v1.3.1  |
+|            \ .\  |.|  /. /            |                                                                                                                        v1.4.0  |
 |  _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _  |                                                          by EthanMC                                                            |
 |    - -/_/_/- ^_^/| |\^_^ -\_\_\- -    |                                                                                                                                |
 |              /_ / | \ _\              |                                                                                                                                |
@@ -47,6 +47,7 @@ ________________________________________________________________________________
 	Ver. 1.2.1		Added 8 new trade routes for hemp.
 	Ver. 1.3.0		Added new resource: Cannabutter. Can be made with a Creamery (Big Cheese DLC required). Also includes trade routes for cannabutter.
 	Ver. 1.3.1		Fixed bugs with cannabutter production
+	Ver. 1.4.0		Added custom building icons for Hemp Factory and Biofuel plant. Added color overlays for custom buildings. Added dispensaries (seperate mod file). Added config file support. Biofuel plant bug fixed.
 
 ╔╗ ┬ ┬┌─┐┌─┐
 ╠╩╗│ ││ ┬└─┐
@@ -58,10 +59,6 @@ ________________________________________________________________________________
 ╠═╝│  ├─┤││││││├┤  ││  ╠╣ ├┤ ├─┤ │ │ │├┬┘├┤ └─┐
 ╩  ┴─┘┴ ┴┘└┘┘└┘└─┘─┴┘  ╚  └─┘┴ ┴ ┴ └─┘┴└─└─┘└─┘
 ########################################################################################################
-- Add some type of building for entertainment/tourism that consumes cannabis
-- Add dispensary, provides healthcare, consumes cannabis (if possible?)
-- Potential upgraded to plantation that procudes femanized seeds as a by-product
-- Custom textures for Biofuel Plant and Hemp Factory. (will likely still use the meshes)
 - Write Cannabis Kingdom Mission
 
 --]]
@@ -745,4 +742,14 @@ function CreateDrugTrade420(drug,country,startera,endera,price,stand1,impact1,st
 		"StandingCountry3", stand3,
 		"StandingImpact3", impact3,
 	})
+end
+function OnMsg.BuildingCompleted(bld)
+   if bld.Template == "BiofuelPlant" then
+      bld:AddColorization("BiofuelPlantWalls", RGB(40, 40, 5))
+   end
+end
+function OnMsg.BuildingCompleted(bld)
+   if bld.Template == "HempFactory" then
+      bld:AddColorization("HempFactoryWalls", RGB(5, 30, 10))
+   end
 end

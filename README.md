@@ -8,7 +8,7 @@
    \^.\          |\\.//|          /.^/    |    |__| |\ | |\ | |__| |__] | [__     |_/  | |\ | | __ |  \ |  | |\/| 
     \--.|\       |\\.//|       /|.--/     |___ |  | | \| | \| |  | |__] | ___]    | \_ | | \| |__] |__/ |__| |  | 
       \--.| \    |\\.//|    / |.--/
-       \---.|\    |\./|    /|.---/                                                                         v1.3.1
+       \---.|\    |\./|    /|.---/                                                                         v1.4.0
           \--.|\  |\./|  /|.--/
              \ .\  |.|  /. /
    _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _
@@ -87,6 +87,8 @@ Originally was meant to intake hemp and corn, but the base game does not support
 **Ver. 1.3.0** - Added new resource: Cannabutter. Can be made with a Creamery (Big Cheese DLC required). Also includes trade routes for cannabutter.
 
 **Ver. 1.3.1** - Fixed bugs with cannabutter production
+
+**Ver. 1.4.0** - Added custom building icons for Hemp Factory and Biofuel plant. Added color overlays for custom buildings. Added dispensaries (seperate mod file). Added config file support. Biofuel plant bug fixed.
 
 ## Bugs
 - (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
