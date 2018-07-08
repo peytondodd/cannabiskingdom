@@ -97,10 +97,6 @@ Originally was meant to intake hemp and corn, but the base game does not support
 - (since Ver. 2.0.0) Dispensaries will still function even when input resrouces are unavailable. Dispensaries are modled after Majestic's coffee shops, which also share this bug. No known workaround.
 
 ## Planned Features
-- Add some type of building for entertainment/tourism that consumes cannabis
-- Add dispensary, provides healthcare, consumes cannabis (if possible?)
-- Potential upgraded to plantation that procudes femanized seeds as a by-product
-- Custom textures for Biofuel Plant and Hemp Factory. (will likely still use the meshes)
 - Write Cannabis Kingdom Mission
 
 
