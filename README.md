@@ -8,7 +8,7 @@
    \^.\          |\\.//|          /.^/    |    |__| |\ | |\ | |__| |__] | [__     |_/  | |\ | | __ |  \ |  | |\/| 
     \--.|\       |\\.//|       /|.--/     |___ |  | | \| | \| |  | |__] | ___]    | \_ | | \| |__] |__/ |__| |  | 
       \--.| \    |\\.//|    / |.--/
-       \---.|\    |\./|    /|.---/                                                                         v1.4.0
+       \---.|\    |\./|    /|.---/                                                                         v2.0.0
           \--.|\  |\./|  /|.--/
              \ .\  |.|  /. /
    _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _
@@ -89,6 +89,8 @@ Originally was meant to intake hemp and corn, but the base game does not support
 **Ver. 1.3.1** - Fixed bugs with cannabutter production
 
 **Ver. 1.4.0** - Added custom building icons for Hemp Factory and Biofuel plant. Added color overlays for custom buildings. Added dispensaries (seperate mod file). Added config file support. Biofuel plant bug fixed.
+
+**Ver. 2.0.0** - Modular Update: Removed all hemp features and put in seperate modfile for compatability w/ other mods. Added Dispensaries (also seperate modfile). You can now effectivley pick and choose what industries you add with Cannabis Kingdom.
 
 ## Bugs
 - (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
