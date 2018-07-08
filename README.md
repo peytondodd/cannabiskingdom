@@ -94,6 +94,7 @@ Originally was meant to intake hemp and corn, but the base game does not support
 
 ## Bugs
 - (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
+- (since Ver. 2.0.0) Dispensaries will still function even when input resrouces are unavailable. Dispensaries are modled after Majestic's coffee shops, which also share this bug. No known workaround.
 
 ## Planned Features
 - Add some type of building for entertainment/tourism that consumes cannabis
