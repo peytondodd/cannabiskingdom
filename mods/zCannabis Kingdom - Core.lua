@@ -49,6 +49,7 @@ ________________________________________________________________________________
 	Ver. 1.3.1		Fixed bugs with cannabutter production
 	Ver. 1.3.2		Added custom building icons for Hemp Factory and Biofuel plant. Added color overlays for custom buildings.
 	Ver. 2.0.0		Modular Update  - Removed all hemp features and put in seperate modfile for compatability w/ other mods. Added Dispensaries (also seperate modfile).
+	Ver. 2.0.1		Discovered bugs, tried to fix them (failed), but improved some formatting basically
 
 ╔╗ ┬ ┬┌─┐┌─┐
 ╠╩╗│ ││ ┬└─┐
@@ -56,12 +57,14 @@ ________________________________________________________________________________
 ########################################################################################################
 	- (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
 	- (since Ver. 2.0.0) Dispensaries will still function even when input resrouces are unavailable. Dispensaries are modled after Majestic's coffee shops, which also share this bug. No known workaround.
+	- (since Ver. 2.0.1) Joints and Blunts have no value
 
 ╔═╗┬  ┌─┐┌┐┌┌┐┌┌─┐┌┬┐  ╔═╗┌─┐┌─┐┌┬┐┬ ┬┬─┐┌─┐┌─┐
 ╠═╝│  ├─┤││││││├┤  ││  ╠╣ ├┤ ├─┤ │ │ │├┬┘├┤ └─┐
 ╩  ┴─┘┴ ┴┘└┘┘└┘└─┘─┴┘  ╚  └─┘┴ ┴ ┴ └─┘┴└─└─┘└─┘
 ########################################################################################################
 - Write Cannabis Kingdom Mission
+- Config Support
 
 --]]
 
@@ -69,8 +72,8 @@ local MyMod = {
 	Name = "CannabisKingdomCORE",
 	NameText = "Cannabis Kingdom - Core",
 	Author = "EthanMC",
-	Version = "2.0.0",
-	VersionN = 200,
+	Version = "2.0.1",
+	VersionN = 201,
 	Config = {
 		-- Dabs Modifiers ############################################################################
 		Dabs_Price_Era_1 = {Type = "number",Default = 4800,RangeMin = 1,RangeMax = 100000},
@@ -97,7 +100,6 @@ local MyMod = {
 		EdiblesEffectivenessImpact = {Type = "number",Default = -20,RangeMin = -100,RangeMax = 100},
 		EdiblesWorkerImpact = {Type = "number",Default = 4,RangeMin = -100,RangeMax = 100},
 		-- Blunts Modifiers ##########################################################################
-		Blunts_Price_Era_1 = {Type = "number",Default = 1500,RangeMin = 1,RangeMax = 100000},
 		Blunts_Price_Era_2 = {Type = "number",Default = 1750,RangeMin = 1,RangeMax = 100000},
 		Blunts_Price_Era_3 = {Type = "number",Default = 2250,RangeMin = 1,RangeMax = 100000},
 		Blunts_Price_Era_4 = {Type = "number",Default = 3000,RangeMin = 1,RangeMax = 100000},
@@ -109,7 +111,6 @@ local MyMod = {
 		BluntsEffectivenessImpact = {Type = "number",Default = 15,RangeMin = -100,RangeMax = 100},
 		BluntsWorkerImpact = {Type = "number",Default = 4,RangeMin = -100,RangeMax = 100},
 		-- Joints Modifiers ##########################################################################
-		Joints_Price_Era_1 = {Type = "number",Default = 600,RangeMin = 1,RangeMax = 100000},
 		Joints_Price_Era_2 = {Type = "number",Default = 700,RangeMin = 1,RangeMax = 100000},
 		Joints_Price_Era_3 = {Type = "number",Default = 900,RangeMin = 1,RangeMax = 100000},
 		Joints_Price_Era_4 = {Type = "number",Default = 1200,RangeMin = 1,RangeMax = 100000},
@@ -422,11 +423,9 @@ OnMsg.DataLoaded = function()
 	CreateTrade("Cannabutter","Smugglers",3,3,125,"",0,"",0,"",0)
 	CreateTrade("Cannabutter","Smugglers",4,4,125,"",0,"",0,"",0)
 	CreateTrade("Dabs","Smugglers",4,4,125,"USA",1,"Middle East",-2,"China",-2)
-	CreateTrade("Blunts","Smugglers",1,1,125,"",0,"",0,"",0)
 	CreateTrade("Blunts","Smugglers",2,2,125,"",0,"",0,"",0)
 	CreateTrade("Blunts","Smugglers",3,3,125,"",0,"",0,"",0)
 	CreateTrade("Blunts","Smugglers",4,4,125,"",0,"",0,"",0)
-	CreateTrade("Joints","Smugglers",1,1,125,"",0,"",0,"",0)
 	CreateTrade("Joints","Smugglers",2,2,125,"",0,"",0,"",0)
 	CreateTrade("Joints","Smugglers",3,3,125,"",0,"",0,"",0)
 	CreateTrade("Joints","Smugglers",4,4,125,"",0,"",0,"",0)

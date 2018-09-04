@@ -245,6 +245,243 @@ end
 
 function OnMsg.BuildingCompleted(bld)
    if bld.Template == "MedDispensary" then
-      bld:AddColorization("MedDispensaryWalls", RGB(0, 93, 46))
+      bld:AddColorization("MedDispensaryWalls", RGB(85, 100, 70))
+   end
+end
+
+function OnMsg.DataLoaded()
+  PlaceObj("BuildingTemplate", {
+  "name", "PotMall",
+  "file_name", "PotMall"
+}, {
+  PlaceObj("BuildingProperties", {
+    "Model", "Apartment_02",
+    "Name", T({"Cannabis Emporium"}),
+    "NamePlural", T({"Cannabis Emporiums"}),
+    "Description",  T({"All the cannabis, extracts, and paraphenalia a Tropican could ask for! Requires legalized substances."}),
+    "MenuText", T({"Sells recreational cannabis."}),
+    "BaseBudgetMin", 100,
+    "BaseBudgetMax", 500,
+    "asphalt_road", true,
+    "TerrainName", "square3",
+    "SelectionSound", "supermarket_select_sound",
+    "AmbientSound","nightclub_work_sound"
+  }),
+
+  PlaceObj("ProductionPower", {
+    "InputResource", "Cannabis",
+    "BaseInputAmount", 150,
+    "InputCapacity", 1500,
+    "BasePowerAmount", 0
+  }),
+
+  PlaceObj("Construction", {
+    "Category", "attractions",
+    "Position", 9904,
+    "ConstructionCost", 5000,
+    "ConstructionPoints", 150,
+    "Era",  3
+  }),
+
+  PlaceObj("Crime", {
+    "BaseAmount", 10,
+    "Radius", 20000
+  }),
+
+  PlaceObj("StandingComponent", {
+    "Type","environmentalists",
+    "Amount", 5
+  }),
+
+  PlaceObj("StandingComponent", {
+    "Type","religious",
+    "Amount", -5
+  }),
+
+  PlaceObj("Service", {
+    "BaseInherentServiceQuality", 50,
+    "BaseInherentMaxPopulationServiced", 200,
+    "BaseRadius", 15000,
+    "BaseWealthRequired", 3,
+    "BaseRevenuePer10", 75,
+    "ServiceChildren", false
+  }),
+
+  PlaceObj("Workplace", {
+    "BaseMaxWorkers", 6,
+    "BaseInherentEducationRequired", 3,
+    "BaseInherentWealthProvided", 4,
+    "BaseInherentJobQuality", 70,
+    "Manageable", true,
+    "WorkerProfession", "Budtender"
+  }),
+
+  PlaceObj("Upgrade", {
+    "Id", "Premium Glass",
+    "Name", T({"Premium Glass"}),
+    "Rollover", T({"Start selling imported water pipes, ash trays, and other fine hand blown glass instruments."}),
+    "StartTurnedOn",false,
+    "Cost",2000,
+    "StartingEra",3
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy","Premium Glass",
+    "Category", "Service",
+    "PropName","InherentServiceQuality",
+    "Description", T({"Premium Glass Upgrade"}),
+    "Value", 5
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Premium Glass",
+    "Category", "Building Properties",
+    "PropName", "BudgetMin",
+    "Description", T({"Premium Glass Upgrade"}),
+    "Percent", true,
+    "Value", 10
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Premium Glass",
+    "Category", "Building Properties",
+    "PropName", "BudgetMax",
+    "Description", T({"Premium Glass Upgrade"}),
+    "Percent", true,
+    "Value", 10
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Premium Glass",
+    "Category", "Service",
+    "PropName", "RevenuePer10",
+    "Description", T({"Premium Glass Upgrade"}),
+    "Value", 10
+  }),
+
+  PlaceObj("Upgrade", {
+    "Id", "Free Samples",
+    "Name", T({"Free Samples"}),
+    "Rollover", T({"Everybody loves free samples El Presidente! It will definitely raise our budget, but the customers love it!"}),
+    "Toggle", true,
+    "DisabledText",T({"Deactivate to stop providing free samples."}),
+    "StartTurnedOn", false,
+    "Cost", 500,
+    "StartingEra", 3
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy","Free Samples",
+    "Category", "Service",
+    "PropName","InherentServiceQuality",
+    "Description", T({"Free Samples Upgrade"}),
+    "Value", 15
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Free Samples",
+    "Category", "Building Properties",
+    "PropName", "BudgetMin",
+    "Description", T({"Free Samples Upgrade"}),
+    "Percent", true,
+    "Value", 25
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Free Samples",
+    "Category", "Building Properties",
+    "PropName", "BudgetMax",
+    "Description", T({"Free Samples Upgrade"}),
+    "Percent", true,
+    "Value", 25
+  }),
+
+  PlaceObj("Upgrade", {
+    "Id", "Smoke Lounge",
+    "Name", T({"Smoke Lounge"}),
+    "Rollover", T({"Add in a specialized room for customers to sample the goods. Nice seating, special ventilation, and mood lighting like this doesnt come cheap but the customers and employees will love it."}),
+    "StartTurnedOn",false,
+    "Cost",15000,
+    "StartingEra", 4
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy","Smoke Lounge",
+    "Category", "Service",
+    "PropName","InherentServiceQuality",
+    "Description", T({"Smoke Lounge Upgrade"}),
+    "Value", 10
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Smoke Lounge",
+    "Category", "Service",
+    "PropName", "RevenuePer10",
+    "Description", T({"Smoke Lounge Upgrade"}),
+    "Value", 5
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Smoke Lounge",
+    "Category", "Service",
+    "PropName", "InherentMaxPopulationServiced",
+    "Description", T({"Smoke Lounge Upgrade"}),
+    "Value", 50
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Smoke Lounge",
+    "Category", "Building Properties",
+    "PropName", "BudgetMin",
+    "Description", T({"Smoke Lounge Upgrade"}),
+    "Percent", true,
+    "Value", 10
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Smoke Lounge",
+    "Category", "Building Properties",
+    "PropName", "BudgetMax",
+    "Description", T({"Smoke Lounge Upgrade"}),
+    "Percent", true,
+    "Value", 10
+  }),
+
+  PlaceObj("Upgrade", {
+    "Id","Dank Delivery",
+    "Name",T({"Dank Delivery"}),
+    "Rollover",T({"Cannabis is delivered right to the customer! Requires an additional staff member. Increases Housing Quality of residences in the vicinity by 10 (does not stack)."}),
+    "StartTurnedOn",false,
+    "Cost",5000,
+    "StartingEra",4
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy","Dank Delivery",
+    "Affected","Residence",
+    "Radius",15000,
+    "Category","Residence",
+    "PropName","InherentHousingQuality",
+    "Description", T({"Dank Delivery (Cannabis Emporium Upgrade)"}),
+    "Value", 10,
+    "Cap", 10
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy","Dank Delivery",
+    "Affected","Residence",
+    "Radius",15000,
+    "Category","Residence",
+    "PropName","InherentEffectiveness",
+    "Description", T({"Dank Delivery (Cannabis Emporium Upgrade)"}),
+    "Value", 10,
+    "Cap", 10
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Dank Delivery",
+    "Category", "Service",
+    "PropName", "RevenuePer10",
+    "Description", T({"Dank Delivery Upgrade"}),
+    "Value", 5
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Dank Delivery",
+    "Category", "Workplace",
+    "PropName", "MaxWorkers",
+    "Description", T({"Dank Delivery Upgrade"}),
+    "Value", 1
+  })
+})
+end
+
+function OnMsg.BuildingCompleted(bld)
+   if bld.Template == "PotMall" then
+      bld:AddColorization("PotMallWalls", RGB(85, 100, 70))
    end
 end

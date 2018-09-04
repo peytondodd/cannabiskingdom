@@ -236,10 +236,10 @@ function OnMsg.DataLoaded()
   }),
   PlaceObj("Production", {
     "InputResource1", "Cannabis",
-    "BaseInputAmount1", 800,
+    "BaseInputAmount1", 600,
     "InputCapacity1", 3200,
     "OutputResource", "Hemp",
-    "BaseOutputAmount", 800,
+    "BaseOutputAmount", 600,
     "OutputCapacity", 8000
   }),
   PlaceObj("StandingComponent", {
@@ -278,7 +278,7 @@ function OnMsg.DataLoaded()
   PlaceObj("Upgrade", {
     "Id", "Electric Processing",
     "Name", T({"Electric Processing"}),
-    "Rollover", T({"The Hemp Factory begins consuming 50MW of power, decreases workers by 2, increases effectiveness by 30."}),
+    "Rollover", T({"The Hemp Factory begins consuming 50MW of power, decreases workers by 2, increases effectiveness by 30. Requires high school workers."}),
     "StartTurnedOn", false,
     "Cost", 12000,
     "BasePowerConsumed", 50,
@@ -290,6 +290,13 @@ function OnMsg.DataLoaded()
     "PropName", "InherentEffectiveness",
     "Description", T({"Electric Processing Upgrade"}),
     "Value", 30
+  }),
+  PlaceObj("ApplyModifier", {
+    "EnabledBy", "Electric Processing",
+    "Category", "Workplace",
+    "PropName", "InherentEducationRequired",
+    "Description", T({"Electric Processing Upgrade"}),
+    "Value", 2
   }),
   PlaceObj("ApplyModifier", {
     "EnabledBy", "Electric Processing",
@@ -320,7 +327,7 @@ function OnMsg.DataLoaded()
     "Category", "Workplace",
     "PropName", "InherentEducationRequired",
     "Description", T({"Advanced Processing Upgrade"}),
-    "Value", 3
+    "Value", 1
   }),
   PlaceObj("ApplyModifier", {
     "EnabledBy", "Advanced Processing",
@@ -328,6 +335,22 @@ function OnMsg.DataLoaded()
     "PropName", "MaxWorkers",
     "Description", T({"Advanced Processing Upgrade"}),
     "Value", -2
+  }),
+  PlaceObj("ApplyModifier", {
+  	"EnabledBy", "Advanced Processing",
+  	"Category", "BuildingProperties",
+  	"PropName", "BudgetMin",
+    "Description", T({"Advanced Processing Upgrade"}),
+    "Percent", true,
+    "Value", -30
+  }),
+  PlaceObj("ApplyModifier", {
+  	"EnabledBy", "Advanced Processing",
+  	"Category", "BuildingProperties",
+  	"PropName", "BudgetMax",
+    "Description", T({"Advanced Processing Upgrade"}),
+    "Percent", true,
+    "Value", -30
   })
 })
 end
@@ -372,6 +395,6 @@ function OnMsg.BuildingCompleted(bld)
 end
 function OnMsg.BuildingCompleted(bld)
    if bld.Template == "HempFactory" then
-      bld:AddColorization("HempFactoryWalls", RGB(5, 30, 10))
+      bld:AddColorization("HempFactoryWalls", RGB(40, 40, 5))
    end
 end
