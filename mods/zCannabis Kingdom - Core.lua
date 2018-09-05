@@ -50,14 +50,13 @@ ________________________________________________________________________________
 	Ver. 1.3.2		Added custom building icons for Hemp Factory and Biofuel plant. Added color overlays for custom buildings.
 	Ver. 2.0.0		Modular Update  - Removed all hemp features and put in seperate modfile for compatability w/ other mods. Added Dispensaries (also seperate modfile).
 	Ver. 2.0.1		Discovered bugs, tried to fix them (failed), but improved some formatting basically
+	Ver. 2.1.0		Bugs fixed thanks to DarthPresidente
 
 ╔╗ ┬ ┬┌─┐┌─┐
 ╠╩╗│ ││ ┬└─┐
 ╚═╝└─┘└─┘└─┘
 ########################################################################################################
 	- (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
-	- (since Ver. 2.0.0) Dispensaries will still function even when input resrouces are unavailable. Dispensaries are modled after Majestic's coffee shops, which also share this bug. No known workaround.
-	- (since Ver. 2.0.1) Joints and Blunts have no value
 
 ╔═╗┬  ┌─┐┌┐┌┌┐┌┌─┐┌┬┐  ╔═╗┌─┐┌─┐┌┬┐┬ ┬┬─┐┌─┐┌─┐
 ╠═╝│  ├─┤││││││├┤  ││  ╠╣ ├┤ ├─┤ │ │ │├┬┘├┤ └─┐
@@ -68,12 +67,12 @@ ________________________________________________________________________________
 
 --]]
 
-local MyMod = {
+local CKCore = {
 	Name = "CannabisKingdomCORE",
 	NameText = "Cannabis Kingdom - Core",
 	Author = "EthanMC",
-	Version = "2.0.1",
-	VersionN = 201,
+	Version = "2.1.0",
+	VersionN = 210,
 	Config = {
 		-- Dabs Modifiers ############################################################################
 		Dabs_Price_Era_1 = {Type = "number",Default = 4800,RangeMin = 1,RangeMax = 100000},
@@ -100,6 +99,7 @@ local MyMod = {
 		EdiblesEffectivenessImpact = {Type = "number",Default = -20,RangeMin = -100,RangeMax = 100},
 		EdiblesWorkerImpact = {Type = "number",Default = 4,RangeMin = -100,RangeMax = 100},
 		-- Blunts Modifiers ##########################################################################
+		Blunts_Price_Era_1 = {Type = "number",Default = 1,RangeMin = 1,RangeMax = 100000},
 		Blunts_Price_Era_2 = {Type = "number",Default = 1750,RangeMin = 1,RangeMax = 100000},
 		Blunts_Price_Era_3 = {Type = "number",Default = 2250,RangeMin = 1,RangeMax = 100000},
 		Blunts_Price_Era_4 = {Type = "number",Default = 3000,RangeMin = 1,RangeMax = 100000},
@@ -111,6 +111,7 @@ local MyMod = {
 		BluntsEffectivenessImpact = {Type = "number",Default = 15,RangeMin = -100,RangeMax = 100},
 		BluntsWorkerImpact = {Type = "number",Default = 4,RangeMin = -100,RangeMax = 100},
 		-- Joints Modifiers ##########################################################################
+		Joints_Price_Era_1 = {Type = "number",Default = 1,RangeMin = 1,RangeMax = 100000},
 		Joints_Price_Era_2 = {Type = "number",Default = 700,RangeMin = 1,RangeMax = 100000},
 		Joints_Price_Era_3 = {Type = "number",Default = 900,RangeMin = 1,RangeMax = 100000},
 		Joints_Price_Era_4 = {Type = "number",Default = 1200,RangeMin = 1,RangeMax = 100000},
@@ -139,11 +140,11 @@ local MyMod = {
 		HippyBudgetImpact = {Type = "number",Default = 80,RangeMin = 0,RangeMax = 100000},
 		HippyStandingImpact = {Type = "number",Default = 10,RangeMin = -100,RangeMax = 100},
 		HippyEffectivenessImpact = {Type = "number",Default = 125,RangeMin = -100,RangeMax = 200},
-		HippyPatrolImpact = {Type = "number",Default = 25,RangeMin = 0,RangeMax = 1000}
+		HippyPatrolImpact = {Type = "number",Default = 25,RangeMin = 0,RangeMax = 1000},
 		-- ###########################################################################################
 	}
 }
-local loadfail, mdata, mcfg, ModT = ModRegister(MyMod)
+local loadfail, mdata, mcfg, ModT = ModRegister(CKCore)
 if loadfail then
 	DebugPrint(loadfail .. "\n")
 	return
@@ -155,35 +156,35 @@ OnMsg.ClassesPreprocess = function()
 	CreateNewResource({
 		Id = "Cannabutter",
 		Name = ModT("Resource_Cannabutter","Cannabutter"),
-		PriceByAge = GetPrices("Cannabutter"),
+		PriceByAge = GetCKCorePrices("Cannabutter"),
 		IsIndustry = true,
 		IsProcessed = true
 	})
 	CreateNewResource({
 		Id = "Dabs",
 		Name = ModT("Resource_Dabs","Dabs"),
-		PriceByAge = GetPrices("Dabs"),
+		PriceByAge = GetCKCorePrices("Dabs"),
 		IsLuxury = true,
 		IsProcessed = true
 	})
 	CreateNewResource({
 		Id = "Edibles",
 		Name = ModT("Resource_Edibles","Edibles"),
-		PriceByAge = GetPrices("Edibles"),
+		PriceByAge = GetCKCorePrices("Edibles"),
 		IsLuxury = true,
 		IsProcessed = true
 	})
 	CreateNewResource({
 		Id = "Blunts",
 		Name = ModT("Resource_Blunts","Blunts"),
-		PriceByAge = GetPrices("Blunts"),
+		PriceByAge = GetCKCorePrices("Blunts"),
 		IsLuxury = true,
 		IsProcessed = true
 	})
 	CreateNewResource({
 		Id = "Joints",
 		Name = ModT("Resource_Joints","Joints"),
-		PriceByAge = GetPrices("Joints"),
+		PriceByAge = GetCKCorePrices("Joints"),
 		IsLuxury = true,
 		IsProcessed = true
 	})
@@ -434,13 +435,13 @@ OnMsg.DataLoaded = function()
 end
 
 -- Parse Trades #######################################################################################################################
-function GetPrices(drug)
-	local t = {}
-	for i = 1, 5 do
-		local price = mcfg[drug .. "_Price_Era_" .. i]
-		t[i] = price
-	end
-	return t
+function GetCKCorePrices(drug)
+    local t = {}
+    for i = 1, 5 do
+        local price = mcfg[drug .. "_Price_Era_" .. i]
+        t[i] = price
+    end
+    return t
 end
 function CreateTrade(drug,country,startera,endera,price,stand1,impact1,stand2,impact2,stand3,impact3)
 	PlaceObj("TradeOffer", {

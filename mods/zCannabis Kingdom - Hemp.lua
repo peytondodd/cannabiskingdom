@@ -21,12 +21,12 @@ ________________________________________________________________________________
 
 --]]
 
-local MyMod = {
+local CKHemp = {
 	Name = "CannabisKingdomHEMP",
 	NameText = "Cannabis Kingdom - Hemp",
 	Author = "EthanMC",
-	Version = "1.0.0",
-	VersionN = 100,
+	Version = "1.1.0",
+	VersionN = 110,
 	Config = {
 		-- Hemp Modifiers ###########################################################################
 		Hemp_Price_Era_1 = {Type = "number",Default = 1600,RangeMin = 1,RangeMax = 100000},
@@ -37,7 +37,7 @@ local MyMod = {
 		-- ###########################################################################################
 	}
 }
-local loadfail, mdata, mcfg, ModT = ModRegister(MyMod)
+local loadfail, mdata, mcfg, ModT = ModRegister(CKHemp)
 if loadfail then
 	DebugPrint(loadfail .. "\n")
 	return
@@ -49,7 +49,7 @@ OnMsg.ClassesPreprocess = function()
 	CreateNewResource({
 		Id = "Hemp",
 		Name = ModT("Resource_Hemp","Hemp"),
-		PriceByAge = GetPrices("Hemp"),
+		PriceByAge = GetCKHempPrices("Hemp"),
 		IsIndustry = true,
 		IsProcessed = true
 	})
@@ -356,13 +356,13 @@ function OnMsg.DataLoaded()
 end
 
 -- Parse Trades #######################################################################################################################
-function GetPrices(drug)
-	local t = {}
-	for i = 1, 5 do
-		local price = mcfg[drug .. "_Price_Era_" .. i]
-		t[i] = price
-	end
-	return t
+function GetCKHempPrices(drug)
+    local t = {}
+    for i = 1, 5 do
+        local price = mcfg[drug .. "_Price_Era_" .. i]
+        t[i] = price
+    end
+    return t
 end
 function CreateTrade(drug,country,startera,endera,price,stand1,impact1,stand2,impact2,stand3,impact3)
 	PlaceObj("TradeOffer", {

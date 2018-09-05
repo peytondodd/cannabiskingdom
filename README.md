@@ -8,7 +8,7 @@
    \^.\          |\\.//|          /.^/    |    |__| |\ | |\ | |__| |__] | [__     |_/  | |\ | | __ |  \ |  | |\/| 
     \--.|\       |\\.//|       /|.--/     |___ |  | | \| | \| |  | |__] | ___]    | \_ | | \| |__] |__/ |__| |  | 
       \--.| \    |\\.//|    / |.--/
-       \---.|\    |\./|    /|.---/                                                                         v2.0.0
+       \---.|\    |\./|    /|.---/                                                                         v2.1.0
           \--.|\  |\./|  /|.--/
              \ .\  |.|  /. /
    _ -_^_^_^_-  \ \\ // /  -_^_^_^_- _
@@ -92,12 +92,14 @@ Originally was meant to intake hemp and corn, but the base game does not support
 
 **Ver. 2.0.0** - Modular Update: Removed all hemp features and put in seperate modfile for compatability w/ other mods. Added Dispensaries (also seperate modfile). You can now effectivley pick and choose what industries you add with Cannabis Kingdom.
 
+**Ver 2.1.0** - Multiple bug fixes thanks to DarthPresidente, thanks again!
+
 ## Bugs
 - (since Ver. 1.1.0) Electric & Advanced Processing do not display electricity consumption. Advanced Processing does not raise education required as intended.
-- (since Ver. 2.0.0) Dispensaries will still function even when input resrouces are unavailable. Dispensaries are modled after Majestic's coffee shops, which also share this bug. No known workaround.
 
 ## Planned Features
 - Write Cannabis Kingdom Mission
+- Config support
 
 
 #### &copy; 2018 Ethan Cochran

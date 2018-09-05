@@ -21,15 +21,15 @@ ________________________________________________________________________________
 
 --]]
 
-local MyMod = {
+local CKDispensaries = {
   Name = "CannabisKingdomDispensaries", 
   NameText = "Cannabis Kingdom - Dispensaries",
   Author = "EthanMC", 
-  Version = "1.0.0",
-  VersionN = 100,
+  Version = "1.1.0",
+  VersionN = 110,
   Config = {}
 }
-local loadfail, mdata, mcfg, ModT = ModRegister(MyMod)
+local loadfail, mdata, mcfg, ModT = ModRegister(CKDispensaries)
 if loadfail then
   DebugPrint(loadfail .. "\n")
   return
@@ -52,11 +52,12 @@ function OnMsg.DataLoaded()
     "TerrainName", "square1"
   }),
 
-  PlaceObj("ProductionPower", {
+  PlaceObj("ProductionGlobal", {
     "InputResource", "Cannabis",
     "BaseInputAmount", 100,
     "InputCapacity", 1000,
-    "BasePowerAmount", 0
+    "ProductionType", false,
+    "ProductionAmount", 0
   }),
 
   PlaceObj("Construction", {
@@ -235,7 +236,7 @@ function OnMsg.DataLoaded()
   }),
     PlaceObj("ApplyModifier", {
     "EnabledBy", "Modern Concentrates",
-    "Category", "ProductionPower",
+    "Category", "ProductionGlobal",
     "PropName", "InputResource",
     "Description", T({"Modern Concentrates Upgrade"}),
     "Value", "Dabs"
@@ -268,11 +269,12 @@ function OnMsg.DataLoaded()
     "AmbientSound","nightclub_work_sound"
   }),
 
-  PlaceObj("ProductionPower", {
+  PlaceObj("ProductionGlobal", {
     "InputResource", "Cannabis",
     "BaseInputAmount", 150,
     "InputCapacity", 1500,
-    "BasePowerAmount", 0
+    "ProductionType", false,
+    "ProductionAmount", 0
   }),
 
   PlaceObj("Construction", {
